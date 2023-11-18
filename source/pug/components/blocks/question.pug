@@ -1,0 +1,13 @@
+mixin question
+  section.question
+    .container
+      .question__wrapper
+        h2.question__title Остались вопросы?
+        p.question__description Задача организации, в&nbsp;особенности&nbsp;же курс на&nbsp;социально-ориентированный национальный проект позволяет оценить значение модели развития.
+        .question__form(data-form-validate data-callback="base")
+          form(action="https://echo.htmlacademy.ru/" method="post" autocomplete="off")
+            +custom-input({inputType: "text", inputLabel: 'Имя', inputName: "user-name", inputPlaceholder: "Имя", dataSubmit: true})(data-validate-type="text" data-limitation="name" data-message-base="Поле обязательно к заполнению!" data-on-input-validate data-required)
+            +custom-input({inputType: "tel", inputLabel: "Телефон", inputName: "user-phone", inputPlaceholder: "Телефон", dataSubmit: true})(data-validate-type="phone" data-message-base="Поле обязательно к заполнению!" data-message-extra="Проверьте корректность заполнения поля!" data-on-input-validate data-required)
+            +custom-input({inputType: "email", inputLabel: "Email", inputName: "user-mail", inputPlaceholder: "Email", dataSubmit: true})(data-validate-type="email" data-message-base="Поле обязательно к заполнению!" data-message-extra="Проверьте корректность заполнения поля!" data-on-input-validate data-required)
+            +btn({text: "Отправить"})(type="submit" data-form="submit" disabled).btn--submit
+

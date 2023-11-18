@@ -1,0 +1,128 @@
+mixin offers
+  - const tabList = ['Горящие предложения', 'Все предложения']
+
+  -
+    const slideHot = [
+      {
+        img: "slide-1",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-2",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-3",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-4",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-1",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-2",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-3",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-4",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      }
+    ]
+
+  -
+    const slideAll = [
+      {
+        img: "slide-4",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-3",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-2",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-1",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-4",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-3",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-2",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      },
+      {
+        img: "slide-1",
+        title: "Пакет включено почти всё",
+        description: "Разнообразный и&nbsp;богатый опыт дальнейшее развитие различных форм деятельности."
+      }
+    ]
+
+  section.offers
+    .container
+      .offers__wrapper
+        h2.offers__title Вы с нами?
+        .tabs(data-tabs='parent', data-delay=300)
+          .tabs__controls.swiper(data-tabs="controls", data-slider-tab)
+            .swiper-wrapper
+              each item, i in tabList
+                .swiper-slide
+                  button.tabs__btn(type="button", data-tabs="control" data-index=i)!= item
+          .tabs__content(data-tabs="content")
+            .tabs__element(data-tabs="element")
+              .swiper(data-slider-hot)
+                .swiper-wrapper
+                  each hot in slideHot
+                    .swiper-slide
+                      .offers__card
+                        +picture('slides', hot.img, 'jpg', 256, 144, hot.img+'.')
+                        h3!= hot.title
+                        p!= hot.description
+                .swiper-button-next
+                .swiper-button-prev
+                .swiper-pagination
+            .tabs__element(data-tabs="element")
+              .swiper(data-slider-all)
+                .swiper-wrapper
+                  each all in slideAll
+                    .swiper-slide
+                      .offers__card
+                        +picture('slides', all.img, 'jpg', 256, 144, all.img+'.')
+                        h3!= all.title
+                        p!= all.description
+                .swiper-button-next
+                .swiper-button-prev
+                .swiper-pagination
+
+

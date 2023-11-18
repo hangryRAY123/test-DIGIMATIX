@@ -1,0 +1,16 @@
+mixin intro()
+  .intro
+    .container
+      .intro__wrapper
+        .intro__inner
+          h1.intro__title До&nbsp;луны и&nbsp;обратно
+          p.intro__description Задача организации, в&nbsp;особенности&nbsp;же курс на&nbsp;социально-ориентированный национальный проект позволяет оценить значение модели развития.
+          ul.intro__btn-list
+            li.intro__btn-item
+              +btn({text: 'Подробнее о нас', href: '#', isExternal: true}).btn--white
+            li.intro__btn-item
+              button(type='button').intro__btn-play
+                +icon('play', 24, 24)
+                span.visually-hidden Play.
+        .intro__img
+          +picture('content', 'earth', 'png', 576, 572, 'Earth.')

@@ -1,0 +1,23 @@
+mixin header(headerMods, currentUrl)
+  -
+    const headerLinks = [
+      {
+        href: "#",
+        text: "Закажите ваш билет"
+      },
+    ]
+
+  header.header(class=headerMods)
+    .container
+      .header__wrapper
+        if(currentUrl === "index.html")
+          //- lighthouse снимает 10 баллов SEO за <a> без href
+          +logo()
+        else
+          a.logo(href="index.html", aria-label="Переход на главную")
+            img(src="img/svg/logo.svg" width=189, height=40, alt='DIGIMATIX')
+        nav.nav
+            ul.nav__list
+              each link in headerLinks
+                li.nav__item
+                    +btn({text: `${link.text}`, href: `${link.href}`, isExternal: true}).btn--white

@@ -1,0 +1,74 @@
+.btn {
+  display: inline-flex;
+  padding: 10px 20px;
+  color: $color-default-white;
+  background-color: $color-neon-blue;
+  border: none;
+  cursor: pointer;
+  transition: $trans-default;
+
+  &--red {
+    background-color: $color-torch-red;
+  }
+
+  &--white {
+    padding: 8px 12px;
+    font-family: "Roboto", "Tahoma", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: $color-default-white;
+    color: #5101a6;
+    border-radius: 6px;
+    text-align: center;
+    max-width: 181px;
+
+    @include vp-767 {
+      font-size: 10px;
+      line-height: 18px;
+      padding: 7px;
+    }
+
+    @include hover-focus {
+      background-color: #5101a6;
+      color: $color-default-white;
+    }
+  }
+
+  &--submit {
+    font-family: "Roboto", "Tahoma", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+    padding: 24px 16px;
+    background-color: #5101a6;
+    border-radius: 6px;
+    justify-content: center;
+    max-width: 256px;
+
+    @include hover-focus {
+      background-color: $color-default-white;
+      color: #5101a6;
+    }
+
+    @include vp-767 {
+      width: 256px;
+      font-size: 14px;
+      padding: 20px;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}

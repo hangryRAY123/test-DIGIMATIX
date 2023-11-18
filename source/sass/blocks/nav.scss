@@ -1,0 +1,21 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: $color-default-white;
+    max-width: 600px;
+  }
+
+  &__item {
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

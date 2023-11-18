@@ -1,0 +1,14 @@
+.logo {
+  flex-shrink: 0;
+  align-self: flex-start;
+
+  @include vp-767 {
+    width: 151px;
+    height: 32px;
+  }
+
+  &--footer {
+    width: 151px;
+    height: 32px;
+  }
+}

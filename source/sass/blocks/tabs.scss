@@ -1,0 +1,213 @@
+.tabs {
+  max-width: 100%;
+  overflow: hidden;
+  padding-top: 15px;
+  padding-bottom: 50px;
+
+  @media screen and (max-width: 768px) {
+    overflow: visible;
+  }
+
+  [data-tabs="accordion"] {
+    @media screen and (max-width: 767px) {
+      margin: 10px 2% 0;
+    }
+
+    > .tabs__control.is-active {
+      pointer-events: auto;
+      opacity: 0.5;
+    }
+
+    > .tabs__control {
+      @media screen and (max-width: 767px) {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+      }
+    }
+  }
+
+  [data-tabs="accordion"].is-active {
+    > .tabs__control {
+      opacity: 1;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 33px;
+    overflow: visible;
+
+    @include vp-767 {
+      margin-bottom: 70px;
+    }
+
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-wrapper {
+      width: 80%;
+      flex-wrap: wrap;
+
+      @include vp-767 {
+        width: 100%;
+        flex-wrap: nowrap;
+      }
+    }
+
+    .swiper-slide {
+      width: auto;
+      margin-right: 48px;
+
+      @include vp-767 {
+        margin-right: 20px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__control {
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 0 20px;
+    opacity: 0.5;
+    min-width: auto;
+    justify-content: center;
+    width: 25%;
+
+    @media screen and (max-width: 1023px) {
+      margin: 0 10px;
+      padding: 15px;
+    }
+
+    @media screen and (max-width: 767px) {
+      margin: 10px 2% 0;
+      padding: 10px;
+      width: 45%;
+    }
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: none;
+    }
+  }
+
+  &__content {
+    transition: height 0.3s;
+
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-pagination {
+      bottom: -52px;
+    }
+
+    .swiper-pagination-bullet {
+      transition: $trans-default;
+      background-color: #e0e0e0;
+      opacity: 1;
+
+      @include hover-focus {
+        background-color: #5101a6;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #5101a6;
+      pointer-events: none;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      top: -60px;
+      right: 0;
+      left: auto;
+      width: 48px;
+      height: 48px;
+      background-color: #f6f6fa;
+      border-radius: 6px;
+      transition: $trans-default;
+
+      @include vp-767 {
+        top: -40px;
+      }
+
+      @include hover-focus {
+        background-color: #e0e0e0;
+      }
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      content: "";
+      width: 24px;
+      height: 24px;
+      background-image: url("../img/svg/arrow.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .swiper-button-next::after {
+      transform: rotate(180deg);
+    }
+
+    .swiper-button-prev {
+      right: 62px;
+    }
+  }
+
+  &__element {
+    width: 100%;
+  }
+
+  &--unset .tabs__content {
+    height: 100px;
+  }
+
+  &--unset .tabs__element {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  &__btn {
+    position: relative;
+    font-family: "Roboto", "Tahoma", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #200142;
+    background-color: $color-default-white;
+    padding: 0;
+    border: 0;
+    padding-bottom: 10px;
+    transition: $trans-default;
+    cursor: pointer;
+    background: no-repeat 0 100%;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 2px;
+
+    @include vp-767 {
+      font-size: 15px;
+    }
+
+    &:hover {
+      background-size: 100% 2px;
+    }
+
+    &.is-active {
+      color: #5101a6;
+      pointer-events: none;
+      background-size: 100% 2px;
+    }
+  }
+}
