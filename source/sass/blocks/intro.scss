@@ -118,7 +118,7 @@
     overflow: hidden;
     filter: drop-shadow(24px 24px 24px rgba(56, 11, 103, 0.3));
     scale: 1;
-    animation: increase 5s 0.3s linear forwards, circle 15s 0.3s linear infinite;
+    animation: increase 5s linear forwards, circle 15s linear infinite;
 
     @include vp-1279 {
       width: 48%;
