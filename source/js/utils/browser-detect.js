@@ -115,19 +115,18 @@ export var BrowserDetect = {
       identity: 'Linux',
     }
   ],
-
 };
 
 BrowserDetect.init();
 
-if (BrowserDetect.version === 119 && BrowserDetect.browser === 'Chrome') {
+if (BrowserDetect.version < 119 && BrowserDetect.browser === 'Chrome') {
   alert('Ваша версия браузера устарела! Обновите до последней версии.');
 }
 
-if (BrowserDetect.version === 119 && BrowserDetect.browser === 'Firefox') {
+if (BrowserDetect.version < 119 && BrowserDetect.browser === 'Firefox') {
   alert('Ваша версия браузера устарела! Обновите до последней версии.');
 }
 
-if (BrowserDetect.version === 10 && BrowserDetect.browser === 'Mozilla') {
-  alert('Ваша версия браузера устарела! Обновите до последней версии.');
+if (BrowserDetect.version < 10 && BrowserDetect.browser === 'Mozilla') {
+  alert('Ваша версия браузера устарела! Установите Microsoft Edge последней версии.');
 }
