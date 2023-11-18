@@ -2592,8 +2592,8 @@ button,
   -webkit-filter: drop-shadow(24px 24px 24px rgba(56, 11, 103, 0.3));
   filter: drop-shadow(24px 24px 24px rgba(56, 11, 103, 0.3));
   scale: 1;
-  -webkit-animation: increase 5s 0.3s linear forwards, circle 15s 0.3s linear infinite;
-  animation: increase 5s 0.3s linear forwards, circle 15s 0.3s linear infinite;
+  -webkit-animation: increase 5s linear forwards, circle 15s linear infinite;
+  animation: increase 5s linear forwards, circle 15s linear infinite;
 }
 
 .intro__img img {
